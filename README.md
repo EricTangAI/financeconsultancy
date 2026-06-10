@@ -2,6 +2,8 @@
 
 A single-page marketing and lead-generation website for Meridian Wealth Advisors, offering investment strategy consultation and portfolio planning services.
 
+![Screenshot of the Meridian Wealth Advisors landing page hero section](assets/screenshot.png)
+
 ## Overview
 
 This is a static, self-contained landing page (`index.html`) with no build system, package manager, or server required. It includes:
