@@ -7,16 +7,18 @@
 <meta name="description" content="Professional investment strategy consultation and portfolio planning services.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --primary: #0F172A;
-    --secondary: #10B981;
-    --accent: #F59E0B;
+    --primary: #1B4D89;
+    --primary-dark: #0F3158;
+    --secondary: #5FA8D3;
+    --accent: #F4A93B;
     --background: #FFFFFF;
-    --text: #1F2937;
-    --light-bg: #F8FAFC;
-    --border: #E2E8F0;
+    --text: #1E2A38;
+    --text-muted: #54708A;
+    --light-bg: #EAF4FC;
+    --border: #D7E8F7;
     --nav-height: 76px;
     --transition: 0.3s ease;
   }
@@ -26,7 +28,7 @@
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     color: var(--text);
     background: var(--background);
     line-height: 1.6;
@@ -34,7 +36,7 @@
   }
 
   h1, h2, h3, h4 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Fraunces', Georgia, serif;
     color: var(--primary);
     line-height: 1.2;
     font-weight: 700;
@@ -62,9 +64,9 @@
     margin: 0 auto 56px;
   }
 
-  .section-header .eyebrow {
+  .eyebrow {
     display: inline-block;
-    color: var(--secondary);
+    color: var(--primary);
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -78,7 +80,7 @@
   }
 
   .section-header p {
-    color: #4B5563;
+    color: var(--text-muted);
     font-size: 1.05rem;
   }
 
@@ -99,37 +101,36 @@
   }
 
   .btn-primary {
-    background: var(--secondary);
+    background: var(--primary);
     color: #ffffff;
-    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.25);
+    box-shadow: 0 8px 20px rgba(27, 77, 137, 0.25);
   }
 
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(16, 185, 129, 0.35);
+    box-shadow: 0 12px 28px rgba(27, 77, 137, 0.35);
   }
 
   .btn-secondary {
     background: transparent;
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.6);
+    color: var(--primary);
+    border-color: var(--primary);
   }
 
   .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: #ffffff;
+    background: rgba(27, 77, 137, 0.08);
     transform: translateY(-2px);
   }
 
   .btn-accent {
     background: var(--accent);
-    color: var(--primary);
-    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+    color: var(--text);
+    box-shadow: 0 8px 20px rgba(244, 169, 59, 0.3);
   }
 
   .btn-accent:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(245, 158, 11, 0.4);
+    box-shadow: 0 12px 28px rgba(244, 169, 59, 0.4);
   }
 
   .btn:focus-visible {
@@ -147,14 +148,14 @@
     height: var(--nav-height);
     display: flex;
     align-items: center;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
     transition: background var(--transition), box-shadow var(--transition), height var(--transition);
   }
 
   .navbar.scrolled {
     background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 2px 16px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 2px 16px rgba(27, 77, 137, 0.1);
     height: 64px;
   }
 
@@ -166,15 +167,12 @@
   }
 
   .logo {
-    font-family: 'Playfair Display', serif;
-    font-weight: 800;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
     font-size: 1.4rem;
-    color: #ffffff;
-    transition: color var(--transition);
+    color: var(--primary);
     letter-spacing: 0.01em;
   }
-
-  .navbar.scrolled .logo { color: var(--primary); }
 
   .nav-links {
     display: flex;
@@ -183,14 +181,12 @@
   }
 
   .nav-links a:not(.btn) {
-    color: #ffffff;
+    color: var(--text);
     font-weight: 500;
     font-size: 0.95rem;
     transition: color var(--transition);
     position: relative;
   }
-
-  .navbar.scrolled .nav-links a:not(.btn) { color: var(--text); }
 
   .nav-links a:not(.btn)::after {
     content: '';
@@ -224,13 +220,10 @@
     display: block;
     width: 26px;
     height: 2px;
-    background: #ffffff;
+    background: var(--primary);
     border-radius: 2px;
     transition: all var(--transition);
   }
-
-  .navbar.scrolled .nav-toggle span,
-  .navbar.menu-open .nav-toggle span { background: var(--primary); }
 
   .navbar.menu-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .navbar.menu-open .nav-toggle span:nth-child(2) { opacity: 0; }
@@ -239,21 +232,36 @@
   /* ===== Hero ===== */
   .hero {
     position: relative;
+    overflow: hidden;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    color: #ffffff;
-    background-image:
-      linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.75) 50%, rgba(15, 23, 42, 0.55) 100%),
-      url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1920&q=80');
-    background-size: cover;
-    background-position: center;
-    background-color: var(--primary);
+    background: linear-gradient(160deg, #FFFFFF 0%, var(--light-bg) 55%, #DCEEFB 100%);
     padding-top: var(--nav-height);
   }
 
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -140px;
+    right: -160px;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(244, 169, 59, 0.16), transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero .container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 56px;
+  }
+
   .hero-content {
-    max-width: 720px;
     opacity: 0;
     transform: translateY(24px);
     animation: heroFadeIn 0.9s ease forwards 0.2s;
@@ -264,15 +272,17 @@
   }
 
   .hero h1 {
-    font-size: clamp(2.2rem, 5.5vw, 3.6rem);
-    color: #ffffff;
+    font-size: clamp(2.4rem, 5vw, 3.7rem);
     margin-bottom: 20px;
+    letter-spacing: -0.01em;
   }
 
+  .hero h1 .accent-text { color: var(--secondary); }
+
   .hero p {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    color: rgba(255, 255, 255, 0.88);
-    max-width: 560px;
+    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+    color: var(--text-muted);
+    max-width: 520px;
     margin-bottom: 36px;
   }
 
@@ -280,27 +290,160 @@
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    margin-bottom: 56px;
+    margin-bottom: 40px;
   }
 
   .trust-badges {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px 32px;
+    gap: 12px;
   }
 
   .trust-badges .badge {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     font-weight: 600;
-    font-size: 0.95rem;
-    color: #ffffff;
+    font-size: 0.85rem;
+    color: var(--primary);
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 9px 16px;
+    box-shadow: 0 6px 16px -8px rgba(27, 77, 137, 0.3);
   }
 
   .trust-badges .badge svg {
     flex-shrink: 0;
     color: var(--secondary);
+  }
+
+  /* ----- Signature: animated portfolio growth chart ----- */
+  .hero-visual {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: heroFadeIn 0.9s ease forwards 0.45s;
+  }
+
+  .hero-chart-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 28px 8px;
+    box-shadow: 0 30px 70px -30px rgba(27, 77, 137, 0.35);
+  }
+
+  .hero-chart-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .hero-chart-title {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 0.95rem;
+  }
+
+  .hero-chart-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    background: var(--light-bg);
+    border-radius: 999px;
+    padding: 5px 12px;
+  }
+
+  .hero-chart {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hero-chart .chart-grid-line {
+    stroke: var(--border);
+    stroke-width: 1;
+  }
+
+  .hero-chart .chart-area {
+    fill: url(#heroChartFill);
+  }
+
+  .hero-chart .chart-line {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+    animation: drawChartLine 2s ease forwards 0.6s;
+  }
+
+  @keyframes drawChartLine {
+    to { stroke-dashoffset: 0; }
+  }
+
+  .hero-chart .chart-point {
+    fill: #ffffff;
+    stroke: var(--primary);
+    stroke-width: 2.5;
+    opacity: 0;
+    animation: chartPointIn 0.4s ease forwards;
+  }
+
+  .hero-chart .chart-point.is-highlight {
+    fill: var(--accent);
+    stroke: #ffffff;
+  }
+
+  @keyframes chartPointIn {
+    to { opacity: 1; }
+  }
+
+  .hero-chart .chart-point:nth-of-type(1) { animation-delay: 0.6s; }
+  .hero-chart .chart-point:nth-of-type(2) { animation-delay: 0.9s; }
+  .hero-chart .chart-point:nth-of-type(3) { animation-delay: 1.2s; }
+  .hero-chart .chart-point:nth-of-type(4) { animation-delay: 1.55s; }
+  .hero-chart .chart-point:nth-of-type(5) { animation-delay: 1.85s; }
+  .hero-chart .chart-point:nth-of-type(6) { animation-delay: 2.25s; }
+  .hero-chart .chart-point:nth-of-type(7) { animation-delay: 2.6s; }
+
+  .hero-chart .chart-pulse {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2;
+    opacity: 0;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: chartPulse 2.6s ease-out 2.6s infinite;
+  }
+
+  @keyframes chartPulse {
+    0% { opacity: 0.55; transform: scale(1); }
+    75% { opacity: 0; transform: scale(2.6); }
+    100% { opacity: 0; transform: scale(2.6); }
+  }
+
+  .hero-chart-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 4px 18px;
+    margin-top: 4px;
+    border-top: 1px solid var(--border);
+  }
+
+  .hero-chart-footer div { font-size: 0.82rem; color: var(--text-muted); }
+
+  .hero-chart-footer strong {
+    display: block;
+    color: var(--primary);
+    font-size: 0.95rem;
+    font-family: 'Fraunces', serif;
   }
 
   /* ===== Fade-in on scroll ===== */
@@ -334,7 +477,7 @@
 
   .card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 16px 40px rgba(27, 77, 137, 0.08);
     border-color: transparent;
   }
 
@@ -342,8 +485,8 @@
     width: 56px;
     height: 56px;
     border-radius: 12px;
-    background: rgba(16, 185, 129, 0.1);
-    color: var(--secondary);
+    background: rgba(95, 168, 211, 0.15);
+    color: var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -355,7 +498,7 @@
     margin-bottom: 10px;
   }
 
-  .card p { color: #4B5563; font-size: 0.97rem; }
+  .card p { color: var(--text-muted); font-size: 0.97rem; }
 
   /* ===== Process Timeline ===== */
   .process { background: var(--background); }
@@ -396,7 +539,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Fraunces', serif;
     font-size: 1.3rem;
     font-weight: 700;
     border: 4px solid var(--background);
@@ -408,7 +551,7 @@
     margin-bottom: 8px;
   }
 
-  .timeline-step p { color: #4B5563; font-size: 0.92rem; }
+  .timeline-step p { color: var(--text-muted); font-size: 0.92rem; }
 
   /* ===== Testimonials ===== */
   .testimonials { background: var(--light-bg); }
@@ -432,7 +575,7 @@
 
   .testimonial-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 16px 40px rgba(27, 77, 137, 0.08);
   }
 
   .stars { color: var(--accent); letter-spacing: 2px; font-size: 1.05rem; }
@@ -465,15 +608,16 @@
   }
 
   .testimonial-author .name { font-weight: 700; color: var(--primary); font-size: 0.95rem; }
-  .testimonial-author .role { color: #6B7280; font-size: 0.85rem; }
+  .testimonial-author .role { color: var(--text-muted); font-size: 0.85rem; }
 
   /* ===== Lead Magnet ===== */
   .lead-magnet {
-    background: linear-gradient(135deg, var(--primary) 0%, #1E293B 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: #ffffff;
     text-align: center;
   }
 
+  .lead-magnet .eyebrow { color: var(--secondary); }
   .lead-magnet .section-header h2 { color: #ffffff; }
   .lead-magnet .section-header p { color: rgba(255,255,255,0.8); }
 
@@ -509,7 +653,7 @@
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 44px;
-    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.06);
+    box-shadow: 0 20px 60px rgba(27, 77, 137, 0.06);
   }
 
   .form-grid {
@@ -548,7 +692,7 @@
   .form-group textarea:focus {
     outline: none;
     border-color: var(--secondary);
-    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.12);
+    box-shadow: 0 0 0 4px rgba(95, 168, 211, 0.18);
   }
 
   .form-group input.error,
@@ -643,13 +787,13 @@
 
   .faq-answer-inner {
     padding: 0 24px 20px;
-    color: #4B5563;
+    color: var(--text-muted);
     font-size: 0.95rem;
   }
 
   /* ===== Final CTA ===== */
   .final-cta {
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: #ffffff;
     text-align: center;
     position: relative;
@@ -660,8 +804,8 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 30% 30%, rgba(16, 185, 129, 0.25), transparent 60%),
-                radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.18), transparent 55%);
+    background: radial-gradient(circle at 30% 30%, rgba(95, 168, 211, 0.3), transparent 60%),
+                radial-gradient(circle at 80% 70%, rgba(244, 169, 59, 0.2), transparent 55%);
   }
 
   .final-cta .container { position: relative; z-index: 1; }
@@ -679,9 +823,19 @@
     font-size: 1.05rem;
   }
 
+  .final-cta .btn-primary {
+    background: #ffffff;
+    color: var(--primary);
+    box-shadow: 0 8px 24px rgba(15, 49, 88, 0.3);
+  }
+
+  .final-cta .btn-primary:hover {
+    box-shadow: 0 12px 32px rgba(15, 49, 88, 0.4);
+  }
+
   /* ===== Footer ===== */
   footer {
-    background: #0B1222;
+    background: var(--primary-dark);
     color: rgba(255, 255, 255, 0.75);
     padding: 64px 0 32px;
   }
@@ -701,7 +855,7 @@
     color: #ffffff;
     font-size: 0.95rem;
     margin-bottom: 16px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 600;
   }
 
@@ -743,6 +897,11 @@
 
   /* ===== Responsive ===== */
   @media (max-width: 1024px) {
+    .hero { min-height: auto; padding: calc(var(--nav-height) + 56px) 0 64px; }
+    .hero .container { grid-template-columns: 1fr; gap: 40px; }
+    .hero-content, .hero-visual { min-width: 0; }
+    .hero-visual { max-width: 480px; width: 100%; margin: 0 auto; }
+
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .footer-brand { grid-column: 1 / -1; }
   }
@@ -772,7 +931,7 @@
       max-height: 0;
       overflow: hidden;
       transition: max-height var(--transition);
-      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 12px 24px rgba(27, 77, 137, 0.08);
     }
 
     .navbar.menu-open .nav-links {
@@ -790,7 +949,7 @@
     .nav-links .btn-primary { margin-top: 16px; width: 100%; }
 
     .hero-ctas { flex-direction: column; }
-    .hero-ctas .btn { width: 100%; }
+    .hero-ctas .btn { width: 100%; white-space: normal; text-align: center; }
 
     .form-grid { grid-template-columns: 1fr; }
     .form-wrapper { padding: 28px 20px; }
@@ -800,7 +959,8 @@
 
   @media (max-width: 480px) {
     .container { padding: 0 18px; }
-    .trust-badges { flex-direction: column; gap: 12px; }
+    .trust-badges { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .hero-chart-footer { flex-direction: column; gap: 10px; }
   }
 
   /* Skip link for accessibility */
@@ -808,7 +968,7 @@
     position: absolute;
     left: -999px;
     top: auto;
-    background: var(--secondary);
+    background: var(--primary);
     color: #fff;
     padding: 12px 20px;
     z-index: 2000;
@@ -818,6 +978,35 @@
   .skip-link:focus {
     left: 0;
     top: 0;
+  }
+
+  /* ===== Reduced motion ===== */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+
+    .hero-content,
+    .hero-visual,
+    .fade-in {
+      opacity: 1;
+      transform: none;
+      animation: none;
+      transition: none;
+    }
+
+    .hero-chart .chart-line {
+      stroke-dashoffset: 0;
+      animation: none;
+    }
+
+    .hero-chart .chart-point {
+      opacity: 1;
+      animation: none;
+    }
+
+    .hero-chart .chart-pulse {
+      animation: none;
+      opacity: 0;
+    }
   }
 </style>
 </head>
@@ -850,7 +1039,8 @@
   <section class="hero" id="top" aria-label="Hero">
     <div class="container">
       <div class="hero-content">
-        <h1>Build a Smarter Investment Strategy for Long-Term Wealth Growth</h1>
+        <span class="eyebrow">Personalized Wealth Management</span>
+        <h1>Build a Smarter Investment Strategy for <span class="accent-text">Long-Term Wealth Growth</span></h1>
         <p>Personalized investment planning, portfolio diversification, and risk management strategies designed to help you achieve your financial goals.</p>
         <div class="hero-ctas">
           <a href="#enquiry" class="btn btn-primary">Get Your Free Investment Strategy Checklist</a>
@@ -858,16 +1048,50 @@
         </div>
         <div class="trust-badges">
           <div class="badge">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             Risk-Managed Approach
           </div>
           <div class="badge">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
             Data-Driven Strategy
           </div>
           <div class="badge">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></svg>
             Long-Term Growth Focus
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-chart-card">
+          <div class="hero-chart-card-header">
+            <span class="hero-chart-title">Portfolio Growth</span>
+            <span class="hero-chart-tag">Illustrative</span>
+          </div>
+          <svg class="hero-chart" viewBox="0 0 600 320" focusable="false">
+            <defs>
+              <linearGradient id="heroChartFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#5FA8D3" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#5FA8D3" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <line class="chart-grid-line" x1="0" y1="60" x2="600" y2="60"/>
+            <line class="chart-grid-line" x1="0" y1="140" x2="600" y2="140"/>
+            <line class="chart-grid-line" x1="0" y1="220" x2="600" y2="220"/>
+            <line class="chart-grid-line" x1="0" y1="300" x2="600" y2="300"/>
+            <path class="chart-area" d="M20,260 L110,230 L200,250 L290,180 L380,205 L470,110 L560,60 L560,300 L20,300 Z"/>
+            <path class="chart-line" d="M20,260 L110,230 L200,250 L290,180 L380,205 L470,110 L560,60"/>
+            <circle class="chart-point" cx="20" cy="260" r="5"/>
+            <circle class="chart-point" cx="110" cy="230" r="5"/>
+            <circle class="chart-point" cx="200" cy="250" r="5"/>
+            <circle class="chart-point" cx="290" cy="180" r="5"/>
+            <circle class="chart-point" cx="380" cy="205" r="5"/>
+            <circle class="chart-point" cx="470" cy="110" r="5"/>
+            <circle class="chart-point is-highlight" cx="560" cy="60" r="7"/>
+            <circle class="chart-pulse" cx="560" cy="60" r="7"/>
+          </svg>
+          <div class="hero-chart-footer">
+            <div><strong>Personalized</strong>Strategy built around your goals</div>
+            <div><strong>Ongoing</strong>Portfolio monitoring &amp; reviews</div>
           </div>
         </div>
       </div>
