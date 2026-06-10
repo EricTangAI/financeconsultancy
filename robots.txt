@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://erictangai.github.io/financeconsultancy/sitemap.xml
